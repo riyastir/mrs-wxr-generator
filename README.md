@@ -1,22 +1,22 @@
 # wxr-generator
 
-[![npm](https://img.shields.io/npm/v/wxr-generator.svg?style=flat-square)]()
-[![](https://img.shields.io/github/issues-raw/firekylin/wxr-generator.svg?style=flat-square)]()
-[![license](https://img.shields.io/github/license/firekylin/wxr-generator.svg?style=flat-square)]()
+[![npm](https://img.shields.io/npm/v/mrs-wxr-generator.svg?style=flat-square)]()
+[![](https://img.shields.io/github/issues-raw/riyastir/mrs-wxr-generator.svg?style=flat-square)]()
+[![license](https://img.shields.io/github/license/riyastir/mrs-wxr-generator.svg?style=flat-square)]()
 
-XML(WXR) file generator for fully support official [WordPress Import Plugin](https://wordpress.org/plugins/wordpress-importer/). Inspired By [node-wxr](https://github.com/f1nnix/node-wxr).
+XML(WXR) file generator for fully support official [WordPress Import Plugin](https://wordpress.org/plugins/wordpress-importer/). Inspired By [node-wxr](https://github.com/f1nnix/node-wxr) and [wxr-generator](https://github.com/firekylin/wxr-generator).
 
 ## Install
 
 ```shell
-npm install wxr-generator
+npm install mrs-wxr-generator
 ```
 
 ## How To Use
 
 
 ```js
-var Importer = require('wxr-generator');
+var Importer = require('mrs-wxr-generator');
 var importer = new Importer();
 
 importer.addCategory({
@@ -44,7 +44,7 @@ Returns a new instance of Importer.
 #### Example
 
 ```js
-var Importer = require('wxr-generator');
+var Importer = require('mrs-wxr-generator');
 var importer = new Importer({
   name: 'another wordpress blog',
   url: 'http://test.wordpress.com',
@@ -245,4 +245,4 @@ Contributions welcome!
 
 ## License
 
-[MIT](https://github.com/firekylin/wxr-generator/blob/master/LICENSE)
+[MIT](https://github.com/riyastir/mrs-wxr-generator/blob/master/LICENSE)
