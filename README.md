@@ -1,4 +1,4 @@
-# wxr-generator
+# mrs-wxr-generator
 
 [![npm](https://img.shields.io/npm/v/mrs-wxr-generator.svg?style=flat-square)]()
 [![](https://img.shields.io/github/issues-raw/riyastir/mrs-wxr-generator.svg?style=flat-square)]()

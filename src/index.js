@@ -38,7 +38,7 @@ module.exports = class Generator {
     this.channel.ele("language", {}, language)
     this.channel.ele("wp:base_site_url", {}, base_site_url)
     this.channel.ele("wp:base_blog_url", {}, base_blog_url)
-    this.channel.ele("generator", {}, "https://npmjs.com/wxr-generator")
+    this.channel.ele("generator", {}, "https://npmjs.com/mrs-wxr-generator")
   }
 
   /**
