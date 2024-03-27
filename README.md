@@ -14,17 +14,16 @@ npm install mrs-wxr-generator
 
 ## How To Use
 
-
 ```js
-var Importer = require('mrs-wxr-generator');
-var importer = new Importer();
+var Importer = require("mrs-wxr-generator")
+var importer = new Importer()
 
 importer.addCategory({
-  slug : "perfect-category",
-  name: "Perfect Category"
-});
+  slug: "perfect-category",
+  name: "Perfect Category",
+})
 
-console.log(importer.stringify());
+console.log(importer.stringify())
 ```
 
 ## API
@@ -33,67 +32,74 @@ console.log(importer.stringify());
 
 Returns a new instance of Importer.
 
-- options: 
-   * name: site name
-   * url: site url
-   * description: site description
-   * language: site language, default is en-US
-   * base\_site\_url: same as url
-   * base\_blog\_url: same as url
+- options:
+  - name: site name
+  - url: site url
+  - description: site description
+  - language: site language, default is en-US
+  - base_site_url: same as url
+  - base_blog_url: same as url
 
 #### Example
 
 ```js
-var Importer = require('mrs-wxr-generator');
+var Importer = require("mrs-wxr-generator")
 var importer = new Importer({
-  name: 'another wordpress blog',
-  url: 'http://test.wordpress.com',
-  description: 'this is another wordpress blog test',
-  language: 'en-US'
-});
+  name: "another wordpress blog",
+  url: "http://test.wordpress.com",
+  description: "this is another wordpress blog test",
+  language: "en-US",
+})
 
 // importer.addPost(...)
 ```
+
 ### addPost(options)
 
 Adds new post for Importer object.
 
 - options:
-  * id: post Id, if not provied, random ID will be generated.
-  * url: post permalink url.
-  * slug: post slug name if it exists.
-  * date: post create time.
-  * title: post title.
-  * author: post author, it equals author's login name.
-  * content: post content
-  * summary: post summary
-  * comment_status: post comment status, default is `open`, it can be `open` or `closed`.
-  * ping_status: post ping status, default is `open`, it can be `open` or `closed`.
-  * password: post visit password if it should, default is empty.
-  * categories: post categories, it's an array item. Every item should has `slug` and `name` prototype.
-  * tags: post tags, it's an array item. Every item should has `slug` and `name` prototype.
-  * image: id of attached image to use as featured image for this post
+  - id: post Id, if not provied, random ID will be generated.
+  - url: post permalink url.
+  - slug: post slug name if it exists.
+  - date: post create time.
+  - title: post title.
+  - author: post author, it equals author's login name.
+  - content: post content
+  - summary: post summary
+  - comment_status: post comment status, default is `open`, it can be `open` or `closed`.
+  - ping_status: post ping status, default is `open`, it can be `open` or `closed`.
+  - password: post visit password if it should, default is empty.
+  - categories: post categories, it's an array item. Every item should has `slug` and `name` prototype.
+  - tags: post tags, it's an array item. Every item should has `slug` and `name` prototype.
+  - image: id of attached image to use as featured image for this post
 
 #### Example
 
 ```js
 importer.addPost({
   id: 1,
-  title: 'hello world',
-  url: 'http://localhost/hello-world.html',
-  slug: 'hello-world',
-  date: '2017-07-03 10:00:00',
-  author: 'admin',
-  content: 'Welcome to WordPress. This is your first post. Edit or delete it, then start writing!',
-  summary: 'Welcome',
-  comment_status: 'open',
-  ping_status: 'closed',
-  password: '',
-  categories: [{slug: 'life', name: 'Life'}, {slug: 'wp', name: 'wordpress'}],
-  tags: [{slug: 'blog', name: 'Blog'}],
-  image: 1000
+  title: "hello world",
+  url: "http://localhost/hello-world.html",
+  slug: "hello-world",
+  date: "2017-07-03 10:00:00",
+  author: "admin",
+  content:
+    "Welcome to WordPress. This is your first post. Edit or delete it, then start writing!",
+  summary: "Welcome",
+  comment_status: "open",
+  ping_status: "closed",
+  password: "",
+  categories: [
+    { slug: "life", name: "Life" },
+    { slug: "wp", name: "wordpress" },
+  ],
+  tags: [{ slug: "blog", name: "Blog" }],
+  image: 1000,
+  postMeta: [{ key: "custom_key", value: "custom_value" }],
 })
 ```
+
 ### addPage(options)
 
 Adds new page for Importer object. All parameters are same as `addPost(options)`.
@@ -103,11 +109,11 @@ Adds new page for Importer object. All parameters are same as `addPost(options)`
 Adds new category for Importer object.
 
 - options:
-   * id: category Id. If not provided, random ID will be generated.
-   * slug: category slug. Used in URLS, e.g. "js-rocks"
-   * name: category title, e.g. "Everything about JS"
-   * parent_id: category parent id if it existed.
-   * description: category description string, default is empty.
+  - id: category Id. If not provided, random ID will be generated.
+  - slug: category slug. Used in URLS, e.g. "js-rocks"
+  - name: category title, e.g. "Everything about JS"
+  - parent_id: category parent id if it existed.
+  - description: category description string, default is empty.
 
 #### Example
 
@@ -117,7 +123,7 @@ importer.addCategory({
   parent_id: 3,
   name: "Everything about JS",
   slug: "js-rocks",
-  description: "tech about js"
+  description: "tech about js",
 })
 ```
 
@@ -126,11 +132,10 @@ importer.addCategory({
 Adds new tag for Importer object.
 
 - options:
-   * id: tag Id, if not provied, random ID will be generated.
-   * slug: tag slug. Used in URLS, e.g. "js-rocks"
-   * name: tag title, e.g. "JS"
-   * description: tag description string, default is empty.
-
+  - id: tag Id, if not provied, random ID will be generated.
+  - slug: tag slug. Used in URLS, e.g. "js-rocks"
+  - name: tag title, e.g. "JS"
+  - description: tag description string, default is empty.
 
 #### Example
 
@@ -139,7 +144,7 @@ importer.addTag({
   id: 5,
   name: "JS",
   slug: "js-rocks",
-  description: "tech about js"
+  description: "tech about js",
 })
 ```
 
@@ -147,28 +152,28 @@ importer.addTag({
 
 Add new user for Importer object.
 
-- options: 
-   * id: user Id
-   * username: user login name
-   * email: user email
-   * display_name: user nickname
-   * first_name: user first name
-   * last_name: user last name
+- options:
+  - id: user Id
+  - username: user login name
+  - email: user email
+  - display_name: user nickname
+  - first_name: user first name
+  - last_name: user last name
 
 ### addAttachment(options)
 
 Adds new attachment(image) for Importer object.
 
-- options: 
-   * id: attachment Id. If not provided, random ID will be generated.
-   * url: attachment absolute url.
-   * date: attachment create time.
-   * file: attachment relative path if it exist.
-   * title: attachment title.
-   * author: attachment uploader.
-   * description: attachment description.
-   * post_id: post id relate to the attachment.
-   * meta_data: other serialized attach meta data.
+- options:
+  - id: attachment Id. If not provided, random ID will be generated.
+  - url: attachment absolute url.
+  - date: attachment create time.
+  - file: attachment relative path if it exist.
+  - title: attachment title.
+  - author: attachment uploader.
+  - description: attachment description.
+  - post_id: post id relate to the attachment.
+  - meta_data: other serialized attach meta data.
 
 #### Exmaples
 
@@ -181,7 +186,7 @@ importer.addAttachment({
   title: "Fig. 1. Cats and puppies",
   author: "admin",
   description: "Fig. 1. Cats and puppies",
-  post_id: 3
+  post_id: 3,
 })
 ```
 
@@ -200,9 +205,9 @@ importer.addPost({
   content: 'post content',
   summary: 'excerpt',
   comment_status: 'closed',
-  ping_status: 'closed', 
+  ping_status: 'closed',
   image: imageId
-}) 
+})
 
 if(image){
   importer.addAttatchment({
@@ -215,6 +220,7 @@ if(image){
  })
 }
 ```
+
 ### addComment(options)
 
 TODO
@@ -226,19 +232,20 @@ Generates result XML (WXR) string for importing to Wordpress.
 #### Example
 
 ```js
-var importer = new Importer();
+var importer = new Importer()
 
 // importer.addPost(...)
 
-var xmlString = importer.stringify();
-require("fs").writeFile("export.xml", xmlString, function(err) {
+var xmlString = importer.stringify()
+require("fs").writeFile("export.xml", xmlString, function (err) {
   if (err) {
-    console.log(err);
+    console.log(err)
   }
 
   console.log("File was saved! Now it's time to import.")
-});
+})
 ```
+
 ## Contributing
 
 Contributions welcome!
