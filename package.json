@@ -1,6 +1,6 @@
 {
   "name": "mrs-wxr-generator",
-  "version": "0.3.2",
+  "version": "0.3.4",
   "description": "XML(WXR) file generator for fully support official WordPress Import Plugin with Custom Post Meta.",
   "main": "./lib",
   "scripts": {
