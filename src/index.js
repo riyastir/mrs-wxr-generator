@@ -24,7 +24,7 @@ module.exports = class Generator {
 
     this.xml = xmlbuilder
       .create("rss")
-      .att("xmlns:excerpt", "http://wordpress.org/export/1.2/expert")
+      .att("xmlns:excerpt", "http://wordpress.org/export/1.2/excerpt")
       .att("xmlns:content", "http://purl.org/rss/1.0/modules/content/")
       .att("xmlns:wfw", "http://wellformedweb.org/CommentAPI/")
       .att("xmlns:dc", "http://purl.org/dc/elements/1.1/")
@@ -110,7 +110,7 @@ module.exports = class Generator {
       tags.forEach((tag) =>
         post
           .ele("category", {
-            domain: "category",
+            domain: "post_tag",
             nicename: tag.slug,
           })
           .cdata(tag.name)
