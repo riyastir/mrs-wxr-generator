@@ -225,6 +225,7 @@ module.exports = class Generator {
     comment_status = "close",
     ping_status = "close",
     meta_data,
+    customMeta
   }) {
     author = author || "admin"
     comment_status = comment_status || "open"
@@ -266,6 +267,18 @@ module.exports = class Generator {
         },
       ],
     })
+    if (Array.isArray(customMeta)) {
+      customMeta.forEach((meta) =>
+        attach.ele({
+          "wp:postmeta": [
+            {
+              "wp:meta_key": meta.key,
+              "wp:meta_value": meta.value,
+            },
+          ],
+        })
+      )
+    }
   }
 
   /** TODO */
